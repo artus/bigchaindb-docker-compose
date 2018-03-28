@@ -12,3 +12,5 @@ fi
 echo "Done, starting up docker-compose..."
 
 docker-compose up -d
+
+docker-compose ps
