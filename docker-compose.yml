@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  mongodb:
+    image: mongo:3.4.9
+    command: --replSet=bigchain-rs
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - $HOME/mongodb_docker/db:/data/db
+      - $HOME/mongodb_docker/configdb:/data/configdb
+    restart: always
+
+  bigchaindb:
+    image: artusvranken/alpine-bigchaindb
+    command: start
+    container_name: bigchaindb
+    ports:
+      - 59984:9984
+    volumes:
+      - $HOME/bigchaindb_docker:/data
+    restart: always
