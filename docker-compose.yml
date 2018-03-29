@@ -17,7 +17,7 @@ services:
     command: start
     container_name: bigchaindb
     ports:
-      - 59985:9984
+      - 59985:9985
       - 59984:9984
     volumes:
       - $HOME/bigchaindb_docker:/data
